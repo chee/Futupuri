@@ -1,0 +1,41 @@
+<!doctype html>
+<title>Futupuri</title>
+<style>@import url( '../css/style.css' );</style>
+
+<video class="main-panel" autoplay id="video"></video>
+<canvas class="main-panel" id="output" width="640" height="480"></canvas>
+<div class="main-panel" id="effects"></div>
+
+<div class="controls">
+	<div></div
+	><div><button class="snap"><i class="icon-camera"></i></button></div
+	><div><button class="effects-button">Effects</button></div>
+</div>
+
+<div class="photographs">
+</div>
+
+<footer class="metadata">
+	<span class="photo-value">0</span> photos !
+</footer>
+
+<article id="templates">
+	<script type="text/html" id="picture">
+		<div class="picture">
+			<i class="remove">x</i>
+			<i class="save icon-save"></i>
+			<img src="{{ src }}" data-id="{{ id }}"></img>
+		</div>
+	</script>
+	<script type="text/html" id="effectDemo">
+		<div class="effect-demo">
+			<canvas width="{{ width }}" height="{{ height }}" data-filter="{{ filter }}"></canvas>
+		</div>
+	</script>
+</article>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/tools.js"></script>
+<script src="../js/pixel.js"></script>
+<script src="../js/templates.js"></script>
+<script src="../js/camera.js"></script>

@@ -1,0 +1,213 @@
+@import url( "fontawesome.css" );
+
+body {
+	margin: 0;
+	font-family: helvetica neue;
+	font-weight: 100;
+	background: #345;
+}
+
+.main-panel {
+	width: 640px;
+	height: 480px;
+	text-align: center;
+}
+
+#video,
+#effects,
+.show-effects #output {
+	display: none;
+}
+
+#output,
+.show-effects #effects {
+	display: block;
+}
+
+.controls,
+.metadata {
+	background-image: linear-gradient( to bottom, #ddd, #bbb );
+}
+
+.controls {
+	line-height: 3.1em;
+	height: 3.1em;
+	border-bottom: 1px solid #666;
+}
+
+.controls > div {
+	width: 33.3333%;
+	text-align: center;
+	display: inline-block;
+}
+
+.snap,
+.snap:hover {
+	color: white;
+	background-color: red;
+	background-image: linear-gradient( to bottom right, #f99, #f00 );
+	box-shadow: inset 1px 1px 7px rgba( 255, 200, 200, 0.5 );
+	text-shadow: 1px 1px rgba( 0, 0, 0, 0.1 );
+	border: 1px solid darkred;
+	height: 2em;
+	width: 2em;
+	font-size: 1.2em;
+	border-radius: 2em;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.snap:active {
+	box-shadow: inset 1px 1px 5px rgba( 0, 0, 0, 0.5 );
+}
+
+.photographs {
+	line-height: 100px;
+	height: 117px;
+	border-top:    1px solid #fff;
+	border-bottom: 1px solid #fff;
+	background: #e7e7e7;
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+
+.photographs .picture {
+	position: relative;
+	width: 117px;
+	height: 90px;
+	display: inline-block;
+	margin-right: .5em;
+}
+
+.photographs .picture .save,
+.photographs .picture .remove {
+	display: block;
+	position: absolute;
+	bottom: -.5em;
+	right: -.5em;
+	cursor: pointer;
+	background-color: #333;
+	border: 2px solid white;
+	padding: 3px;
+	color: white;
+	height: 1em;
+	width: 1em;
+	line-height: 1;
+	border-radius: 1em;
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: opacity .2s ease-in-out;
+	transition: opacity .2s ease-in-out;
+	-webkit-transition-property: opacity, color, background-color;
+	transition-property: opacity, color, background-color:
+}
+
+.photographs .save:focus,
+.photographs .remove:focus,
+.photographs .save:hover,
+.photographs .remove:hover,
+.photographs .picture:hover .save,
+.photographs .picture:hover .remove {
+	opacity: 1;
+}
+
+.photographs .picture .save {
+	font-size: .875em;
+}
+
+.photographs .picture .remove:hover,
+.photographs .picture .remove:hover {
+	background-color: #633;
+}
+
+.photographs .picture .save:hover,
+.photographs .picture .save:focus {
+	background-color: #363;
+}
+
+.photographs .remove {
+	border: 3px solid white;
+	padding: 0;
+	font-family: cursive;
+	top: 0;
+}
+
+.photographs img {
+	vertical-align: middle;
+	margin-right: .5em;
+	height: 80px;
+	border: 1px solid #ccc;
+	background: white;
+	padding: 4px;
+}
+
+.metadata {
+	text-align: center;
+	height: 25px;
+	line-height: 25px;
+	border-top: 1px solid #666;
+	color: #666;
+	font-size: 14px;
+}
+
+.context-menu {
+	display: none;
+	position: absolute;
+	border: 1px solid black;
+	background: white;
+}
+
+#effects {
+	overflow: auto;
+	text-align: center;
+	background: #345;
+}
+
+.effect-demo {
+	display: inline-block;
+	border: 1px solid #456;
+	padding: 1%;
+	margin: .4% .8%;
+	background: #000;
+	border-radius: .2em;
+	box-shadow: .1em .1em .3em rgba(0, 0, 0, 0.1);
+}
+
+button,
+.button {
+	font-family: helvetica neue;
+	font-size: 0.75em;
+	font-weight: 300;
+	background-image: linear-gradient( to bottom, #eee, #ccc );
+	border: 1px solid #999;
+	color: #555;
+	border-radius: 5px;
+	padding: 0.5em 2.5em;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+button:hover,
+.button:hover,
+button:focus,
+.button:focus  {
+	color: #333;
+	background-image: linear-gradient( to bottom, #f7f7f7, #d3d3d3 );
+	border: 1px solid #888;
+	box-shadow: 0 1px 1px rgba( 0, 0, 0, 0.2 );
+}
+
+button:active,
+.button:active {
+	color: #333;
+	background-image: linear-gradient( to bottom, #d0d0d0, #f7f7f7 );
+	box-shadow: inset 0 1px rgba( 0, 0, 0, 0.4 );
+	border: 1px solid #aaa;
+}
+
+.show-effects .effects-button {
+	color: #eee;
+	background-image: linear-gradient( to bottom, #333, #666 );
+	box-shadow: inset 0 4px 8px rgba( 0, 0, 0, 0.4 );
+	text-shadow: -1px 1px #555;
+}
