@@ -34,8 +34,8 @@
 	body.on( 'keyup', function ( event ) {
 		if ( event.which === SPACE_BAR ) {
 			takePicture();
-		} else if ( event.which === ESCAPE && body.hasClass ( 'show-effects' ) ) {
-			toggleEffects();
+		} else if ( event.which === ESCAPE ) {
+			body.removeClass( 'show-effects' );
 		}
 	});
 
