@@ -6,6 +6,7 @@
 	var URL = window.URL || window.webkitURL;
 
 	var SPACE_BAR = 32;
+	var ESCAPE = 27;
 
 	var video = $( '#video' ).get( 0 );
 	var canvas = $( '#output' );
@@ -33,6 +34,8 @@
 	body.on( 'keyup', function ( event ) {
 		if ( event.which === SPACE_BAR ) {
 			takePicture();
+		} else if ( event.which === ESCAPE && body.hasClass ( 'show-effects' ) ) {
+			toggleEffects();
 		}
 	});
 
