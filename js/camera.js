@@ -61,6 +61,8 @@
 		chrome.storage.local.set( picture, function() {
 			insertPicture( dataURI );
 		});
+		
+		$( '#camera-shutter' ).get( 0 ).play();
 	}
 
 	chrome.storage.local.get(function ( data ) {
