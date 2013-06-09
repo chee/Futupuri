@@ -5,8 +5,11 @@
 	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
 	var URL = window.URL || window.webkitURL;
 
-	var SPACE_BAR = 32;
-	var ESCAPE = 27;
+	var keycodes = {
+		space: 32,
+		esc: 27,
+		e: 69
+	}
 
 	var video = $( '#video' ).get( 0 );
 	var canvas = $( '#output' );
@@ -32,10 +35,12 @@
 	snap.on( 'click', takePicture );
 
 	body.on( 'keyup', function ( event ) {
-		if ( event.which === SPACE_BAR ) {
+		if ( event.which === keycodes.space ) {
 			takePicture();
-		} else if ( event.which === ESCAPE ) {
+		} else if ( event.which === keycodes.esc ) {
 			body.removeClass( 'show-effects' );
+		} else if ( event.which === keycodes.e ) {
+			body.toggleClass( 'show-effects' );
 		}
 	});
 
