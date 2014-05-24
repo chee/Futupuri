@@ -1,18 +1,14 @@
 <!doctype html>
 <title>Futupuri</title>
-<style>@import url( '../css/style.css' );</style>
+<link rel="stylesheet" href="../css/style.css">
 
-<video class="main-panel" autoplay id="video"></video>
-<canvas class="main-panel" id="output" width="640" height="480"></canvas>
-<div class="main-panel" id="effects"></div>
-
-<audio hidden="hidden" id="camera-shutter">
-	 <!--
-	 camera-shutter.ogg is licensed CC BY 3.0.
-	 Attribution goes to Jormarp http://www.freesound.org/people/Jormarp/sounds/142638/
-	 -->
-	<source src="../audio/camera-shutter.ogg" />
+<audio hidden="hidden" id="camera-shutter" src="../audio/camera-shutter.ogg">
+	camera-shutter.ogg is licensed CC BY 3.0.
+	Attribution goes to Jormarp http://www.freesound.org/people/Jormarp/sounds/142638/
 </audio>
+<video class="main-panel video" autoplay id="js-video"></video>
+<canvas class="main-panel output" id="js-output" width="640" height="480"></canvas>
+<div class="main-panel effects" id="js-effects"></div>
 
 <div class="controls">
 	<div></div
@@ -24,7 +20,7 @@
 </div>
 
 <footer class="metadata">
-	<span class="photo-value">0</span> photos !
+	<span class="photo-value">0</span> photos
 </footer>
 
 <article id="templates">
