@@ -8,25 +8,28 @@
 		space: 32,
 		esc: 27,
 		e: 69
-	}
+	};
 
-	var video = $( '#video' ).get( 0 );
-	var canvas = $( '#output' );
+	var video = $( '#js-video' ).get( 0 );
+	var canvas = $( '#js-output' );
 	var context = canvas.get( 0 ).getContext( '2d' );
 	var snap = $( '.snap' );
 	var photographs = $( '.photographs' );
 	var effectsButton = $( '.effects-button' );
-	var effects = $( '#effects' );
+	var effects = $( '#js-effects' );
 	var body = $( document.body );
 
-	photographs.on( 'dblclick', 'img', function ( event ) {
+	photographs
+	.on( 'dblclick', 'img', function ( event ) {
 		open( event.target.src );
-	}).on( 'click', '.remove', function ( event ) {
+	})
+	.on( 'click', '.remove', function ( event ) {
 		var element = $( event.target ).parent();
 		var img = element.find( 'img' ).get( 0 );
 		tools.removeImage( img.dataset.id );
 		element.remove();
-	}).on( 'click', '.save', function ( event ) {
+	})
+	.on( 'click', '.save', function ( event ) {
 		var img = $( event.target ).siblings( 'img' ).get( 0 );
 		tools.saveImage( img.src, 'futu-' + img.dataset.id + '.png' );
 	});
@@ -39,7 +42,7 @@
 		} else if ( event.which === keycodes.esc ) {
 			body.removeClass( 'show-effects' );
 		} else if ( event.which === keycodes.e ) {
-			body.toggleClass( 'show-effects' );
+			toggleEffects();
 		}
 	});
 
@@ -65,7 +68,7 @@
 		chrome.storage.local.set( picture, function() {
 			insertPicture( dataURI );
 		});
-		
+
 		$( '#camera-shutter' ).get( 0 ).play();
 	}
 
@@ -104,9 +107,9 @@
 		});
 	}
 
-	navigator.getUserMedia({
-		video: true
-	}, function ( stream ) {
+	navigator.getUserMedia({ video: true }, gotUserMedia, console.error.bind(console));
+
+	function gotUserMedia( stream ) {
 		// start video running
 		video.src = URL.createObjectURL( stream );
 
@@ -118,8 +121,7 @@
 		Object.keys( pixel.filters ).forEach( function ( name ) {
 			effects.append( makeDemo( name ) );
 		});
-
-	});
+	}
 
 	function makeDemo ( name ) {
 		var demoSettings = {
