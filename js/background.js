@@ -1,4 +1,3 @@
-/*global chrome:false*/
 chrome.app.runtime.onLaunched.addListener(function () {
 	'use strict';
 	chrome.app.window.create( '../html/index.html', {

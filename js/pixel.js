@@ -1,4 +1,3 @@
-/*global pixel*/
 window.pixel = (function () {
 	'use strict';
 

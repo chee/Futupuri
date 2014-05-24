@@ -1,4 +1,3 @@
-/*global tools:false, templates:false, pixel:false*/
 (function( chrome, $, _ ){
 	'use strict';
 
